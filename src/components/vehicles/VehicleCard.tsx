@@ -80,6 +80,7 @@ export function VehicleCard({
             <div className="absolute left-3 top-3">
               <Badge
                 variant={vehicle.fuel_type}
+                showIcon
                 className="rounded-lg px-2.5 py-1 text-[11px] font-semibold backdrop-blur-sm"
               >
                 {fuelConfig.label}
