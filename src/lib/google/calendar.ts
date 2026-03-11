@@ -43,19 +43,44 @@ async function getTokensForUser(userId: string): Promise<GoogleTokens | null> {
 }
 
 async function refreshAccessToken(userId: string, refreshToken: string): Promise<string> {
+  const clientId = process.env.GOOGLE_CLIENT_ID
+  const clientSecret = process.env.GOOGLE_CLIENT_SECRET
+
+  if (!clientId || !clientSecret) {
+    throw new Error('Google OAuth non configurato: GOOGLE_CLIENT_ID o GOOGLE_CLIENT_SECRET mancanti')
+  }
+
   const res = await fetch('https://oauth2.googleapis.com/token', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: new URLSearchParams({
-      client_id: process.env.GOOGLE_CLIENT_ID!,
-      client_secret: process.env.GOOGLE_CLIENT_SECRET!,
+      client_id: clientId,
+      client_secret: clientSecret,
       refresh_token: refreshToken,
       grant_type: 'refresh_token',
     }),
   })
 
   if (!res.ok) {
-    throw new Error('Failed to refresh Google access token')
+    const errorBody = await res.text()
+    console.error('Google token refresh failed:', res.status, errorBody)
+
+    // If refresh token is revoked/expired, clear the integration so user can re-connect
+    if (res.status === 400 || res.status === 401) {
+      const admin = createAdminClient()
+      await admin
+        .from('google_integrations')
+        .update({
+          access_token: '',
+          token_expiry: new Date(0).toISOString(),
+          updated_at: new Date().toISOString(),
+        })
+        .eq('user_id', userId)
+
+      throw new Error('Sessione Google scaduta. Riconnetti Google dalle Impostazioni.')
+    }
+
+    throw new Error(`Refresh token Google fallito: ${errorBody}`)
   }
 
   const data = await res.json() as { access_token: string; expires_in: number }
