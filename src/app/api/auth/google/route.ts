@@ -7,8 +7,8 @@ export async function GET() {
   // Verify the user is authenticated
   const cookieStore = await cookies()
   const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    (process.env.NEXT_PUBLIC_SUPABASE_URL ?? '').trim(),
+    (process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? '').trim(),
     {
       cookies: {
         getAll() {
@@ -21,19 +21,17 @@ export async function GET() {
 
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) {
-    return NextResponse.redirect(new URL('/admin/login', process.env.NEXT_PUBLIC_APP_URL))
+    return NextResponse.json({ error: 'not_authenticated' }, { status: 401 })
   }
 
   // Check that Google credentials are configured
-  if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
-    return NextResponse.redirect(
-      new URL('/admin/impostazioni?error=google_not_configured', process.env.NEXT_PUBLIC_APP_URL)
-    )
+  if (!(process.env.GOOGLE_CLIENT_ID ?? '').trim() || !(process.env.GOOGLE_CLIENT_SECRET ?? '').trim()) {
+    return NextResponse.json({ error: 'google_not_configured' }, { status: 500 })
   }
 
   // Use user ID as state for CSRF protection
   const state = user.id
   const url = getGoogleOAuthURL(state)
 
-  return NextResponse.redirect(url)
+  return NextResponse.json({ url })
 }

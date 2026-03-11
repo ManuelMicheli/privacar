@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useCallback } from 'react'
-import { CheckCircle } from 'lucide-react'
+import { CheckCircle } from '@/components/icons'
 import toast from 'react-hot-toast'
 import { cn } from '@/lib/utils/cn'
 import { Modal } from '@/components/ui/Modal'

@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight } from '@/components/icons'
 import { VehicleGrid } from '@/components/vehicles/VehicleGrid'
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
 import type { Vehicle } from '@/types'

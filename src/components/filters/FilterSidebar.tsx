@@ -2,7 +2,8 @@
 
 import { useState, useEffect, useCallback, useTransition } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { ChevronDown, RotateCcw } from 'lucide-react'
+import { RotateCcw } from 'lucide-react'
+import { ChevronDown } from '@/components/icons'
 import { cn } from '@/lib/utils/cn'
 import { useDebounce } from '@/lib/hooks/useDebounce'
 import { FUEL_TYPES, TRANSMISSION_TYPES } from '@/lib/utils/constants'

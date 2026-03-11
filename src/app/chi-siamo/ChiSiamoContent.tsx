@@ -1,12 +1,7 @@
 'use client'
 
-import {
-  Building2,
-  ClipboardCheck,
-  Camera,
-  FileCheck,
-  Scale,
-} from 'lucide-react'
+import { Scale } from 'lucide-react'
+import { CarFront, Inspection, Gallery, Key } from '@/components/icons'
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll'
 import { PageTransition } from '@/components/ui/PageTransition'
 import { Counter } from '@/components/ui/Counter'
@@ -14,19 +9,19 @@ import { Button } from '@/components/ui/Button'
 
 const methodCards = [
   {
-    icon: ClipboardCheck,
+    icon: Inspection,
     title: 'Perizia 100+ Controlli',
     description:
       'Ogni auto viene sottoposta a una perizia approfondita con oltre 100 controlli meccanici, elettrici e di carrozzeria.',
   },
   {
-    icon: Camera,
+    icon: Gallery,
     title: 'Foto Professionali',
     description:
       'Servizio fotografico professionale per presentare ogni veicolo al meglio, con dettagli su interni ed esterni.',
   },
   {
-    icon: FileCheck,
+    icon: Key,
     title: 'Documenti Verificati',
     description:
       'Verifichiamo lo storico del veicolo, i tagliandi, i passaggi di proprietà e l\'assenza di gravami o ipoteche.',
@@ -102,7 +97,7 @@ export function ChiSiamoContent() {
             <AnimateOnScroll variant="slide-right">
               <div className="flex aspect-[4/3] w-full items-center justify-center rounded-2xl bg-bg-alt">
                 <div className="flex flex-col items-center gap-3 text-text-muted">
-                  <Building2 className="h-16 w-16" />
+                  <CarFront className="h-16 w-16" />
                   <p className="text-sm font-medium">Privacar Rho</p>
                   <p className="text-xs">Via Madonna, 23 — Rho (MI)</p>
                 </div>

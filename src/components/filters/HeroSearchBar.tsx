@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { Search } from 'lucide-react'
+import { Search } from '@/components/icons'
 import { BRANDS, FUEL_TYPES } from '@/lib/utils/constants'
 
 const PRICE_RANGES = [

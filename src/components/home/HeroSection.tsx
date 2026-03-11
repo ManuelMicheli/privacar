@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { ChevronDown } from 'lucide-react'
+import { ChevronDown } from '@/components/icons'
 
 const ease = [0.25, 0.4, 0.25, 1]
 const clipEase = [0.76, 0, 0.24, 1]

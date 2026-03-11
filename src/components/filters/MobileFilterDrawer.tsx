@@ -2,7 +2,8 @@
 
 import { useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { X, RotateCcw } from 'lucide-react'
+import { RotateCcw } from 'lucide-react'
+import { Close, Filter } from '@/components/icons'
 import { FilterSidebar } from '@/components/filters/FilterSidebar'
 
 // ─── Props ──────────────────────────────────────────────────────────────────
@@ -92,7 +93,8 @@ export function MobileFilterDrawer({
           >
             {/* Header */}
             <div className="flex items-center justify-between border-b border-gray-100 px-5 py-4">
-              <h2 className="font-heading text-lg font-bold text-primary">
+              <h2 className="flex items-center gap-2 font-heading text-lg font-bold text-primary">
+                <Filter className="h-5 w-5" />
                 Filtri
               </h2>
               <button
@@ -101,7 +103,7 @@ export function MobileFilterDrawer({
                 className="rounded-lg p-2 text-text-secondary transition-colors hover:bg-primary/5 hover:text-primary"
                 aria-label="Chiudi filtri"
               >
-                <X className="h-5 w-5" />
+                <Close className="h-5 w-5" />
               </button>
             </div>
 

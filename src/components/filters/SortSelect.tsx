@@ -2,7 +2,7 @@
 
 import { useCallback } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { ArrowUpDown } from 'lucide-react'
+import { Sort } from '@/components/icons'
 import { SORT_OPTIONS } from '@/lib/utils/constants'
 import { cn } from '@/lib/utils/cn'
 
@@ -36,7 +36,7 @@ export function SortSelect({ currentSort }: SortSelectProps) {
 
   return (
     <div className="flex items-center gap-2">
-      <ArrowUpDown className="h-4 w-4 text-text-muted" />
+      <Sort className="h-4 w-4 text-text-muted" />
       <select
         value={currentSort || 'created_at_desc'}
         onChange={handleChange}

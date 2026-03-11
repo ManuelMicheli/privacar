@@ -1,4 +1,4 @@
-import { MapPin, Phone, MessageCircle, Mail, Clock } from 'lucide-react'
+import { MapPin, Phone, WhatsApp, Email, Clock } from '@/components/icons'
 
 const hours = [
   { day: 'Lunedì - Venerdì', time: '9:00-12:30 / 15:00-19:00' },
@@ -60,7 +60,7 @@ export function ContactInfoCard() {
           className="group flex items-start gap-3 transition-colors"
         >
           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-whatsapp/5 transition-colors group-hover:bg-whatsapp/10">
-            <MessageCircle className="h-5 w-5 text-whatsapp" />
+            <WhatsApp className="h-5 w-5 text-whatsapp" />
           </div>
           <div>
             <p className="text-sm font-medium text-text-primary group-hover:text-whatsapp">
@@ -78,7 +78,7 @@ export function ContactInfoCard() {
           className="group flex items-start gap-3 transition-colors"
         >
           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/5 transition-colors group-hover:bg-primary/10">
-            <Mail className="h-5 w-5 text-primary" />
+            <Email className="h-5 w-5 text-primary" />
           </div>
           <div>
             <p className="text-sm font-medium text-text-primary group-hover:text-primary">

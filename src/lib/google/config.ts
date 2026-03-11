@@ -1,5 +1,7 @@
 // Google OAuth2 configuration
 
+const env = (key: string) => (process.env[key] ?? '').trim()
+
 export const GOOGLE_SCOPES = [
   'https://www.googleapis.com/auth/calendar',
   'https://www.googleapis.com/auth/calendar.events',
@@ -9,8 +11,8 @@ export const GOOGLE_SCOPES = [
 
 export function getGoogleOAuthURL(state: string) {
   const params = new URLSearchParams({
-    client_id: process.env.GOOGLE_CLIENT_ID!,
-    redirect_uri: `${process.env.NEXT_PUBLIC_APP_URL}/api/auth/google/callback`,
+    client_id: env('GOOGLE_CLIENT_ID'),
+    redirect_uri: `${env('NEXT_PUBLIC_APP_URL')}/api/auth/google/callback`,
     response_type: 'code',
     scope: GOOGLE_SCOPES.join(' '),
     access_type: 'offline',
@@ -27,9 +29,9 @@ export async function exchangeCodeForTokens(code: string) {
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: new URLSearchParams({
       code,
-      client_id: process.env.GOOGLE_CLIENT_ID!,
-      client_secret: process.env.GOOGLE_CLIENT_SECRET!,
-      redirect_uri: `${process.env.NEXT_PUBLIC_APP_URL}/api/auth/google/callback`,
+      client_id: env('GOOGLE_CLIENT_ID'),
+      client_secret: env('GOOGLE_CLIENT_SECRET'),
+      redirect_uri: `${env('NEXT_PUBLIC_APP_URL')}/api/auth/google/callback`,
       grant_type: 'authorization_code',
     }),
   })

@@ -2,18 +2,20 @@
 
 import { useState } from 'react'
 import {
-  CreditCard,
-  Clock,
   Percent,
   ThumbsUp,
-  Shield,
   Settings,
   Cog,
   Zap,
   Disc3,
-  Navigation,
   Snowflake,
 } from 'lucide-react'
+import {
+  Finance,
+  Clock,
+  Warranty,
+  Steering,
+} from '@/components/icons'
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll'
 import { PageTransition } from '@/components/ui/PageTransition'
 import { Button } from '@/components/ui/Button'
@@ -22,7 +24,7 @@ import ServiziBentoGrid, { type BentoItem } from '@/components/ui/ServiziBentoGr
 
 const financeItems: BentoItem[] = [
   {
-    icon: CreditCard,
+    icon: Finance,
     title: 'Nessun anticipo obbligatorio',
     description: 'Finanzia l\'intero importo senza dover versare un anticipo. Accedi all\'auto che desideri subito, senza pensieri iniziali.',
   },
@@ -65,7 +67,7 @@ const warrantyItems: BentoItem[] = [
     description: 'Pinze, pompa, servofreno, ABS e tutti i componenti idraulici del sistema frenante.',
   },
   {
-    icon: Navigation,
+    icon: Steering,
     title: 'Sterzo',
     description: 'Cremagliera, servosterzo elettrico e idraulico, tiranti e giunti.',
   },
@@ -103,7 +105,7 @@ export function ServiziContent() {
           <AnimateOnScroll variant="fade-up">
             <div className="mx-auto max-w-3xl text-center">
               <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/5">
-                <CreditCard className="h-7 w-7 text-primary" />
+                <Finance className="h-7 w-7 text-primary" />
               </div>
               <h2 className="font-heading text-4xl font-bold text-text-primary md:text-5xl">
                 Finanziamento su Misura
@@ -147,7 +149,7 @@ export function ServiziContent() {
           <AnimateOnScroll variant="fade-up">
             <div className="mx-auto max-w-3xl text-center">
               <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/5">
-                <Shield className="h-7 w-7 text-primary" />
+                <Warranty className="h-7 w-7 text-primary" />
               </div>
               <h2 className="font-heading text-4xl font-bold text-text-primary md:text-5xl">
                 Garanzia Meccanica

@@ -1,6 +1,6 @@
 'use client'
 
-import { Car, ClipboardCheck, Camera, Banknote } from 'lucide-react'
+import { Car, Inspection, Gallery, Finance } from '@/components/icons'
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll'
 
 const steps = [
@@ -10,17 +10,17 @@ const steps = [
     description: 'o chiedi una visita a domicilio',
   },
   {
-    icon: ClipboardCheck,
+    icon: Inspection,
     title: 'Perizia gratuita',
     description: '100+ controlli di qualità',
   },
   {
-    icon: Camera,
+    icon: Gallery,
     title: 'Pubblichiamo l\'annuncio',
     description: 'Servizio fotografico professionale',
   },
   {
-    icon: Banknote,
+    icon: Finance,
     title: 'Vendiamo al miglior prezzo',
     description: 'Tu incassi, noi gestiamo tutto',
   },

@@ -39,3 +39,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 public/images/.next/
+
+.vercel
+.env*.local

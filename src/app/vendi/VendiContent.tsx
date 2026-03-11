@@ -1,13 +1,6 @@
 'use client'
 
-import {
-  ShieldCheck,
-  Camera,
-  HandCoins,
-  Users,
-  FileCheck,
-  Headphones,
-} from 'lucide-react'
+import { Shield, Gallery, Finance, Handshake, Key, Phone } from '@/components/icons'
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll'
 import { PageTransition } from '@/components/ui/PageTransition'
 import { ProcessSteps } from '@/components/home/ProcessSteps'
@@ -15,32 +8,32 @@ import { ValuationForm } from '@/components/forms/ValuationForm'
 
 const advantages = [
   {
-    icon: ShieldCheck,
+    icon: Shield,
     title: 'Zero Rischi',
     description: 'Nessun costo nascosto: paghi solo al momento della vendita.',
   },
   {
-    icon: Camera,
+    icon: Gallery,
     title: 'Foto Professionali',
     description: 'Servizio fotografico professionale per valorizzare la tua auto.',
   },
   {
-    icon: HandCoins,
+    icon: Finance,
     title: 'Miglior Prezzo',
     description: 'Analisi di mercato per ottenere il massimo dalla vendita.',
   },
   {
-    icon: Users,
+    icon: Handshake,
     title: 'Ampia Visibilità',
     description: 'La tua auto sarà visibile sul nostro sito e su tutti i portali.',
   },
   {
-    icon: FileCheck,
+    icon: Key,
     title: 'Pratiche Incluse',
     description: 'Ci occupiamo noi di tutta la documentazione e del passaggio.',
   },
   {
-    icon: Headphones,
+    icon: Phone,
     title: 'Supporto Dedicato',
     description: 'Un consulente dedicato ti segue in ogni fase della vendita.',
   },

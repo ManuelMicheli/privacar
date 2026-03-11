@@ -5,9 +5,12 @@ import Image from 'next/image'
 import {
   MapPin,
   Phone,
-  Mail,
+  Email,
   Clock,
-} from 'lucide-react'
+  Instagram,
+  Facebook,
+  PrivacarLogo,
+} from '@/components/icons'
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
 
 const quickLinks = [
@@ -54,6 +57,26 @@ export function Footer() {
                 La tua agenzia di compravendita auto tra privati a Rho. Vetture
                 selezionate, garantite e finanziabili.
               </p>
+              <div className="mt-6 flex items-center gap-3">
+                <a
+                  href="https://www.instagram.com/privacar_rho/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/[0.06] text-[#A7F3D0]/60 transition-all duration-300 hover:bg-white/[0.12] hover:text-white hover:scale-105"
+                  aria-label="Seguici su Instagram"
+                >
+                  <Instagram className="h-[18px] w-[18px]" />
+                </a>
+                <a
+                  href="https://www.facebook.com/privacarrho"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/[0.06] text-[#A7F3D0]/60 transition-all duration-300 hover:bg-white/[0.12] hover:text-white hover:scale-105"
+                  aria-label="Seguici su Facebook"
+                >
+                  <Facebook className="h-[18px] w-[18px]" />
+                </a>
+              </div>
             </div>
           </ScrollReveal>
 
@@ -131,7 +154,7 @@ export function Footer() {
                     href="mailto:rho@privacar.com"
                     className="flex items-center gap-3 font-body text-[14px] text-[#A7F3D0]/60 transition-colors duration-300 hover:text-white"
                   >
-                    <Mail className="h-4 w-4 shrink-0 text-[#A7F3D0]/60" />
+                    <Email className="h-4 w-4 shrink-0 text-[#A7F3D0]/60" />
                     <span>rho@privacar.com</span>
                   </a>
                 </li>
@@ -154,9 +177,12 @@ export function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-white/10 mt-12">
         <div className="mx-auto flex flex-col items-center justify-between gap-4 px-4 pt-6 pb-6 sm:flex-row lg:px-12 2xl:px-20">
-          <p className="text-[13px] text-[#A7F3D0]/40">
-            &copy; {currentYear} Privacar Rho. Tutti i diritti riservati.
-          </p>
+          <div className="flex items-center gap-2">
+            <PrivacarLogo size={20} className="text-[#A7F3D0]/30" />
+            <p className="text-[13px] text-[#A7F3D0]/40">
+              &copy; {currentYear} Privacar Rho. Tutti i diritti riservati.
+            </p>
+          </div>
           <div className="flex items-center gap-6">
             <Link
               href="/privacy-policy"

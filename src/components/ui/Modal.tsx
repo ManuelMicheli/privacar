@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { X } from 'lucide-react'
+import { Close } from '@/components/icons'
 import { cn } from '@/lib/utils/cn'
 
 const sizeStyles = {
@@ -143,7 +143,7 @@ export function Modal({
               className="absolute right-4 top-4 rounded-lg p-1.5 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               aria-label="Chiudi"
             >
-              <X className="h-5 w-5" />
+              <Close className="h-5 w-5" />
             </button>
 
             <div className="p-6">

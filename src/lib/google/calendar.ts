@@ -43,8 +43,8 @@ async function getTokensForUser(userId: string): Promise<GoogleTokens | null> {
 }
 
 async function refreshAccessToken(userId: string, refreshToken: string): Promise<string> {
-  const clientId = process.env.GOOGLE_CLIENT_ID
-  const clientSecret = process.env.GOOGLE_CLIENT_SECRET
+  const clientId = (process.env.GOOGLE_CLIENT_ID ?? '').trim()
+  const clientSecret = (process.env.GOOGLE_CLIENT_SECRET ?? '').trim()
 
   if (!clientId || !clientSecret) {
     throw new Error('Google OAuth non configurato: GOOGLE_CLIENT_ID o GOOGLE_CLIENT_SECRET mancanti')

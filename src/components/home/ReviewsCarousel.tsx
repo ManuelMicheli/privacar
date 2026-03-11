@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Star } from 'lucide-react'
+import { Star } from '@/components/icons'
 import { cn } from '@/lib/utils/cn'
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
 
@@ -53,7 +53,7 @@ function StarRating({ rating }: { rating: number }) {
           key={i}
           className={cn(
             'h-4 w-4',
-            i < rating ? 'fill-yellow-400 text-yellow-400' : 'text-gray-200'
+            i < rating ? 'fill-yellow-400 text-yellow-400 [fill-opacity:1]' : 'text-gray-200 [fill-opacity:0.15]'
           )}
         />
       ))}

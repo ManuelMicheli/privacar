@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { motion, useMotionValue, useSpring } from 'framer-motion'
-import { Menu, Search } from 'lucide-react'
+import { Menu, Search } from '@/components/icons'
 import { cn } from '@/lib/utils/cn'
 import { MobileMenu } from './MobileMenu'
 

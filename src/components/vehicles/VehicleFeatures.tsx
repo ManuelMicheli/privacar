@@ -1,4 +1,4 @@
-import { CheckCircle } from 'lucide-react'
+import { CheckCircle } from '@/components/icons'
 import type { VehicleFeatures as VehicleFeaturesType } from '@/types'
 
 export interface VehicleFeaturesProps {

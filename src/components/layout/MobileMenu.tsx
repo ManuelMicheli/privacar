@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { AnimatePresence, motion } from 'framer-motion'
-import { X, Search, Phone, MessageCircle } from 'lucide-react'
+import { Close, Search, Phone, WhatsApp } from '@/components/icons'
 import { cn } from '@/lib/utils/cn'
 
 const navLinks = [
@@ -118,7 +118,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                 className="rounded-lg p-2 text-text-secondary transition-colors hover:bg-primary/5 hover:text-primary"
                 aria-label="Chiudi menu"
               >
-                <X className="h-6 w-6" />
+                <Close className="h-6 w-6" />
               </button>
             </div>
 
@@ -178,7 +178,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                   className="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-whatsapp transition-colors hover:bg-whatsapp/5"
                   aria-label="Contattaci su WhatsApp"
                 >
-                  <MessageCircle className="h-4 w-4" />
+                  <WhatsApp className="h-4 w-4" />
                   <span>WhatsApp</span>
                 </a>
               </div>

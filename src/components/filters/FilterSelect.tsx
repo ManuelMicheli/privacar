@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect, useCallback, useMemo } from 'react'
-import { ChevronDown, Search, X } from 'lucide-react'
+import { ChevronDown, Search, Close } from '@/components/icons'
 import { cn } from '@/lib/utils/cn'
 
 export interface FilterSelectProps {
@@ -122,7 +122,7 @@ export function FilterSelect({
               className="rounded p-0.5 hover:bg-gray-100"
               aria-label={`Rimuovi ${label}`}
             >
-              <X className="h-3.5 w-3.5 text-text-muted" />
+              <Close className="h-3.5 w-3.5 text-text-muted" />
             </span>
           )}
           <ChevronDown

@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { z } from 'zod'
 import toast from 'react-hot-toast'
-import { CheckCircle } from 'lucide-react'
+import { CheckCircle } from '@/components/icons'
 import { Button } from '@/components/ui/Button'
 import { submitAppointment } from '@/lib/actions/appointment-actions'
 

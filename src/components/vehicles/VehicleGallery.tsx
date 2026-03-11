@@ -3,7 +3,7 @@
 import { useState, useRef, useCallback } from 'react'
 import Image from 'next/image'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Car } from 'lucide-react'
+import { Car, Expand } from '@/components/icons'
 import { cn } from '@/lib/utils/cn'
 import { VehicleLightbox } from './VehicleLightbox'
 import type { VehicleImage } from '@/types'
@@ -49,7 +49,7 @@ export function VehicleGallery({ images, brand, model }: VehicleGalleryProps) {
       <button
         type="button"
         onClick={openLightbox}
-        className="relative block w-full cursor-zoom-in overflow-hidden rounded-2xl bg-bg-alt focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+        className="group relative block w-full cursor-zoom-in overflow-hidden rounded-2xl bg-bg-alt focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
         aria-label={`Apri galleria immagini di ${brand} ${model}`}
       >
         <div className="aspect-[16/10]">
@@ -77,6 +77,11 @@ export function VehicleGallery({ images, brand, model }: VehicleGalleryProps) {
         {/* Image counter */}
         <span className="absolute bottom-3 right-3 rounded-lg bg-black/60 px-3 py-1 text-xs font-medium text-white">
           {selectedIndex + 1} / {sortedImages.length}
+        </span>
+
+        {/* Expand icon */}
+        <span className="absolute top-3 right-3 flex h-8 w-8 items-center justify-center rounded-lg bg-black/50 text-white/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-sm">
+          <Expand className="h-4 w-4" />
         </span>
       </button>
 

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { SlidersHorizontal } from 'lucide-react'
+import { Filter } from '@/components/icons'
 import { SortSelect } from '@/components/filters/SortSelect'
 import { MobileFilterDrawer } from '@/components/filters/MobileFilterDrawer'
 
@@ -36,7 +36,7 @@ export function CatalogFilters({
           className="inline-flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-sm font-medium text-text-primary shadow-sm transition-colors hover:border-primary hover:text-primary lg:hidden"
           aria-label="Apri filtri"
         >
-          <SlidersHorizontal className="h-4 w-4" />
+          <Filter className="h-4 w-4" />
           Filtri
           {activeFilterCount > 0 && (
             <span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">

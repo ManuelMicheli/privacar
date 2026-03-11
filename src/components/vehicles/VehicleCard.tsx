@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { Calendar, Gauge, Settings2, MessageCircle } from 'lucide-react'
+import { Calendar, Speedometer, Steering, WhatsApp } from '@/components/icons'
 import { cn } from '@/lib/utils/cn'
 import {
   formatPrice,
@@ -68,7 +68,7 @@ export function VehicleCard({
             />
           ) : (
             <div className="flex h-full items-center justify-center bg-gray-50 text-text-muted">
-              <Gauge className="h-12 w-12" />
+              <Speedometer className="h-12 w-12" />
             </div>
           )}
 
@@ -118,12 +118,12 @@ export function VehicleCard({
             </span>
             <span className="text-[#D1D5DB]">&middot;</span>
             <span className="inline-flex items-center gap-1">
-              <Gauge className="h-3.5 w-3.5" />
+              <Speedometer className="h-3.5 w-3.5" />
               {formatMileage(vehicle.mileage)}
             </span>
             <span className="text-[#D1D5DB]">&middot;</span>
             <span className="inline-flex items-center gap-1">
-              <Settings2 className="h-3.5 w-3.5" />
+              <Steering className="h-3.5 w-3.5" />
               {vehicle.transmission === 'automatico' ? 'Auto' : 'Manuale'}
             </span>
           </div>
@@ -159,7 +159,7 @@ export function VehicleCard({
           className="inline-flex items-center justify-center rounded-xl bg-[#25D366] px-4 py-[10px] font-body text-[13px] font-semibold text-white transition-colors hover:bg-[#20BD5A]"
           aria-label="Contatta su WhatsApp"
         >
-          <MessageCircle className="mr-1.5 h-4 w-4" />
+          <WhatsApp className="mr-1.5 h-4 w-4" />
           WhatsApp
         </a>
       </div>
