@@ -1,7 +1,7 @@
 'use client'
 
 import { Scale } from 'lucide-react'
-import { CarFront, Inspection, Gallery, Key } from '@/components/icons'
+import { CarFront, PrivacarLogoFull, Inspection, Gallery, Key } from '@/components/icons'
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll'
 import { PageTransition } from '@/components/ui/PageTransition'
 import { Counter } from '@/components/ui/Counter'
@@ -96,9 +96,10 @@ export function ChiSiamoContent() {
             {/* Placeholder image */}
             <AnimateOnScroll variant="slide-right">
               <div className="flex aspect-[4/3] w-full items-center justify-center rounded-2xl bg-bg-alt">
-                <div className="flex flex-col items-center gap-3 text-text-muted">
-                  <CarFront className="h-16 w-16" />
-                  <p className="text-sm font-medium">Privacar Rho</p>
+                <div className="flex flex-col items-center gap-4 text-text-muted">
+                  <PrivacarLogoFull size={200} className="text-primary" />
+                  <div className="h-px w-16 bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+                  <CarFront className="h-10 w-10 text-primary/30" />
                   <p className="text-xs">Via Madonna, 23 — Rho (MI)</p>
                 </div>
               </div>
