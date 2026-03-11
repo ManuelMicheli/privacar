@@ -1,0 +1,178 @@
+@import "tailwindcss";
+
+@theme {
+  /* === PRIMARI (Verde Smeraldo) === */
+  --color-primary: #065F46;
+  --color-primary-light: #047857;
+  --color-primary-dark: #064E3B;
+  --color-primary-50: #ECFDF5;
+  --color-primary-100: #D1FAE5;
+  --color-primary-200: #A7F3D0;
+
+  /* === ACCENTO (Blu — usare con parsimonia) === */
+  --color-accent: #1E40AF;
+  --color-accent-light: #2563EB;
+  --color-accent-50: #EFF6FF;
+
+  /* === Neutri === */
+  --color-bg-alt: #F8FAF9;
+  --color-border: #E5E7EB;
+  --color-border-light: #F3F4F6;
+  --color-text-primary: #0F1A14;
+  --color-text-secondary: #4B5B52;
+  --color-text-muted: #8A9A90;
+
+  /* === Status === */
+  --color-success: #065F46;
+  --color-warning: #D97706;
+  --color-sold: #6B7280;
+  --color-whatsapp: #25D366;
+  --color-error: #DC2626;
+
+  /* === Legacy aliases (for backward compat during migration) === */
+  --color-navy: #065F46;
+  --color-navy-light: #047857;
+  --color-navy-dark: #064E3B;
+  --color-red-brand: #065F46;
+  --color-red-brand-light: #047857;
+
+  --font-body: var(--font-spectral), Georgia, serif;
+  --font-heading: var(--font-outfit), system-ui, sans-serif;
+  --font-mono: var(--font-ibm-plex-mono), 'Courier New', monospace;
+
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-fade-in-up: fade-in-up 0.4s ease-out both;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Font rendering === */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* === Lenis smooth scroll === */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* === Custom scrollbar (desktop only) === */
+@media (min-width: 1024px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F8FAF9;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #D1D5DB;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #8A9A90;
+  }
+}
+
+/* === Selection color === */
+::selection {
+  background: rgba(6, 95, 70, 0.12);
+  color: #0F1A14;
+}
+
+/* === Focus visible === */
+*:focus-visible {
+  outline: 2px solid #065F46;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* === Tap highlight === */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* === Images === */
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+/* === Typography system === */
+.section-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #0F1A14;
+}
+
+.section-subtitle {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.625;
+  color: #4B5B52;
+  max-width: 520px;
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #065F46;
+  margin-bottom: 12px;
+}
+
+/* === Reduced motion === */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
